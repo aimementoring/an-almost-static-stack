@@ -28,13 +28,11 @@
     "start": "react-scripts start",
     "build-react": "react-scripts build",
     "build-preact": "node scripts/build-preact.js",
-    "build":
-      "yarn run build-react && react-snap && yarn run generate-sw && yarn run generate-appcache",
+    "build": "yarn run build-react && react-snap && yarn run generate-sw && yarn run generate-appcache",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "generate-fb": "node scripts/add-push-headers.js",
-    "generate-sw":
-      "sw-precache --root=build --config scripts/sw-precache-config.js && uglifyjs build/service-worker.js -o build/service-worker.js",
+    "generate-sw": "sw-precache --root=build --config scripts/sw-precache-config.js && uglifyjs build/service-worker.js -o build/service-worker.js",
     "generate-appcache": "node scripts/generate-appcache.js",
     "aws-deploy": "node scripts/aws-deploy.js",
     "deploy": "yarn run build && yarn run generate-fb && firebase deploy",
@@ -44,6 +42,8 @@
     "cacheAjaxRequests": true,
     "inlineCss": true,
     "http2PushManifest": true,
-    "include": ["/shell.html"]
+    "include": [
+      "/shell.html"
+    ]
   }
 }
